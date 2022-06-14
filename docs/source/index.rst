@@ -20,3 +20,5 @@ Contents
 
    usage
    api
+   test/one
+   test/two
