@@ -17,8 +17,13 @@ Contents
 --------
 
 .. toctree::
+   :caption: Main
 
    usage
    api
+
+.. toctree::
+   :caption: Test Pages
+
    test/one
    test/two
