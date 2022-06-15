@@ -27,3 +27,4 @@ Contents
 
    test/one
    test/two
+   test/cat/index
