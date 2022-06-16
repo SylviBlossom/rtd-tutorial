@@ -24,14 +24,14 @@ Class Members
 
 Variables
 ^^^^^^^^^
-- :var:`wave`
-- :var:`attacker`
-- :var:`damage`
-- :var:`destroy_on_hit`
-- :var:`remove_offscreen`
-- :var:`tp`
-- :var:`time_bonus`
-- :var:`grazed`
+- :data:`wave`
+- :data:`attacker`
+- :data:`damage`
+- :data:`destroy_on_hit`
+- :data:`remove_offscreen`
+- :data:`tp`
+- :data:`time_bonus`
+- :data:`grazed`
 
 Useful Functions
 ^^^^^^^^^^^^^^^^
