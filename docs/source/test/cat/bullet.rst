@@ -26,32 +26,32 @@ Class Members
 
 Variables
 ^^^^^^^^^
-- :attr:`wave`
-- :attr:`attacker`
-- :attr:`damage`
-- :attr:`destroy_on_hit`
-- :attr:`remove_offscreen`
-- :attr:`tp`
-- :attr:`time_bonus`
-- :attr:`grazed`
+- :attr:`wave <Bullet.wave>`
+- :attr:`attacker <Bullet.attacker>`
+- :attr:`damage <Bullet.damage>`
+- :attr:`destroy_on_hit <Bullet.destroy_on_hit>`
+- :attr:`remove_offscreen <Bullet.remove_offscreen>`
+- :attr:`tp <Bullet.tp>`
+- :attr:`time_bonus <Bullet.time_bonus>`
+- :attr:`grazed <Bullet.grazed>`
 
 Useful Functions
 ^^^^^^^^^^^^^^^^
-- :func:`Bullet:setSprite`
-- :func:`Bullet:isBullet`
+- :func:`Bullet:setSprite(texture, [speed, loop, on_finished]) <Bullet.setSprite>`
+- :func:`Bullet:isBullet(id) <Bullet.isBullet>`
 
 Overridable Functions
 ^^^^^^^^^^^^^^^^^^^^^
-- :func:`Bullet:getTarget`
-- :func:`Bullet:getDamage`
-- :func:`Bullet:onDamage`
-- :func:`Bullet:onCollide`
-- :func:`Bullet:onWaveSpawn`
+- :func:`Bullet:getTarget() <Bullet.getTarget>`
+- :func:`Bullet:getDamage() <Bullet.getDamage>`
+- :func:`Bullet:onDamage(soul) <Bullet.onDamage>`
+- :func:`Bullet:onCollide(soul) <Bullet.onCollide>`
+- :func:`Bullet:onWaveSpawn(wave) <Bullet.onWaveSpawn>`
 
 Internal / Class Overrides
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-- :func:`Bullet:update` (from :func:`Object:update`)
-- :func:`Bullet:draw`   (from :func:`Object:draw`)
+- ``Bullet:update()`` (from :func:`Object:update() <Object.update>`)
+- ``Bullet:draw()``   (from :func:`Object:draw() <Object.draw>`)
 
 Class Reference
 ------------------
@@ -61,6 +61,18 @@ Class Reference
 
     :param numbers x,y: The position of the bullet.
     :param string texture: The path to the bullet's texture.
+
+    .. method:: setSprite(texture, [speed, loop, on_finished])
+
+        Sets the sprite of the bullet to the specified path, and changes the bullet's ``width`` and ``height`` variables to the dimensions of the sprite. ``speed``, ``loop``, and ``on_finished`` will be passed into the sprite's ``play()`` function.
+
+        :param string texture: The path to the bullet's texture.
+        :param speed: The animation delay between frames.
+        :type speed: number, optional
+        :param loop: Whether the animation should loop.
+        :type loop: boolean, optional
+        :param on_finished: A function to call when the animation finishes.
+        :type on_finished: function, optional
 
     .. attribute:: wave
 
@@ -109,15 +121,3 @@ Class Reference
         *(Internal)* Whether the bullet has already been grazed. (reduces graze rewards)
 
         :type: boolean
-
-.. function:: Bullet:setSprite(texture, [speed, loop, on_finished])
-
-    Sets the sprite of the bullet to the specified path, and changes the bullet's ``width`` and ``height`` variables to the dimensions of the sprite. ``speed``, ``loop``, and ``on_finished`` will be passed into the sprite's ``play()`` function.
-
-    :param string texture: The path to the bullet's texture.
-    :param speed: The animation delay between frames.
-    :type speed: number, optional
-    :param loop: Whether the animation should loop.
-    :type loop: boolean, optional
-    :param on_finished: A function to call when the animation finishes.
-    :type on_finished: function, optional
