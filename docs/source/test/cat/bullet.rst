@@ -37,8 +37,8 @@ Overridable Functions
 
 Internal / Class Overrides
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-- ``Bullet:update()`` (from :func:`Object:update() <Object.update>`)
-- ``Bullet:draw()``   (from :func:`Object:draw() <Object.draw>`)
+- :func:`Bullet:update` (from :func:`Object:update() <Object.update>`)
+- :func:`Bullet:draw`   (from :func:`Object:draw() <Object.draw>`)
 
 Variables
 ^^^^^^^^^
@@ -61,9 +61,6 @@ Class Reference
     :param numbers x,y: The position of the bullet.
     :param string texture: The path to the bullet's texture.
 
-    Functions
-    ^^^^^^^^^
-
     .. method:: setSprite(texture, [speed, loop, on_finished])
 
         Sets the :attr:`sprite <Bullet.sprite>` of the bullet to the specified path, and changes the bullet's ``width`` and ``height`` variables to the dimensions of the sprite. ``speed``, ``loop``, and ``on_finished`` will be passed into the sprite's ``play()`` function.
@@ -75,19 +72,22 @@ Class Reference
 
     .. method:: isBullet(id)
 
-        :param number id: The id of the bullet.
-        :returns: Whether the bullet is the bullet with the specified ID, or extends it.
-        :rtype: boolean
+        Returns whether the bullet is the bullet with the specified ID, or extends it.
+
+        :param string id: The id of the bullet.
+        :returns: **result** (*boolean*)
     
     .. method:: getTarget()
 
-        :returns: The target of the :attr:`attacker <Bullet.attacker>` (if any), or ``ANY``.
-        :rtype: string or :class:`PartyBattler`
+        Returns the target of the :attr:`attacker <Bullet.attacker>` (if any), or ``ANY``.
+
+        :returns: **target** (*string or* :class:`PartyBattler`)
     
     .. method:: getDamage()
 
-        :returns: The :attr:`damage <Bullet.damage>` of the bullet. If :attr:`damage <Bullet.damage>` is ``nil``, will calculate damage based on the enemy's attack.
-        :rtype: number
+        Returns the :attr:`damage <Bullet.damage>` of the bullet. If :attr:`damage <Bullet.damage>` is ``nil``, will calculate damage based on the enemy's attack.
+
+        :returns: **damage** (*number*)
 
     .. method:: onDamage(soul)
 
@@ -107,59 +107,38 @@ Class Reference
 
         :param Wave wave: The :class:`Wave` that spawned the bullet.
 
-    Variables
-    ^^^^^^^^^
-
     .. attribute:: sprite
 
-        The sprite of the bullet, set by :func:`Bullet:setSprite <Bullet.setSprite>`.
-
-        :type: :class:`Sprite`
+        The :class:`Sprite` of the bullet, set by :func:`Bullet:setSprite <Bullet.setSprite>`.
 
     .. attribute:: wave
 
-        A reference to the current Wave class that is active. Gets defined after ``init()``, but only if spawned through :func:`Wave:spawnBullet`; otherwise, it is never defined.
-
-        :type: :class:`Wave`
+        A reference to the current :class:`Wave` that is active. Gets defined after ``init()``, but only if spawned through :func:`Wave:spawnBullet`; otherwise, it is never defined.
 
     .. attribute:: attacker
 
-        A reference to the enemy associated with the bullet. Gets defined after ``init()``, but only if spawned through :func:`Wave:spawnBullet`; otherwise, it is never defined.
-
-        :type: :class:`EnemyBattler`
+        A reference to the :class:`EnemyBattler` associated with the bullet. Gets defined after ``init()``, but only if spawned through :func:`Wave:spawnBullet`; otherwise, it is never defined.
 
     .. attribute:: damage
 
         Amount of damage the bullet does. If not provided, the game will calculate damage based on the enemy's attack.
 
-        :type: number
-
     .. attribute:: destroy_on_hit
 
         Whether the bullet will be removed when it collides with the player. ``true`` by default.
-
-        :type: boolean
 
     .. attribute:: remove_offscreen
 
         Whether the bullet will be removed when it goes offscreen. ``true`` by default.
 
-        :type: boolean
-
     .. attribute:: tp
 
         The amount of TP (in percentage) the player gains from grazing the bullet. Defaults to 1.6 (1/10th of a defend).
-
-        :type: number
 
     .. attribute:: time_bonus
 
         The number of frames, based on 30fps, that the wave's length will be reduced by when grazing the bullet. Apparently this is a mechanic in Deltarune.
 
-        :type: number
-
     .. attribute:: grazed
 
         *(Internal)* Whether the bullet has already been grazed. (reduces graze rewards)
-
-        :type: boolean
