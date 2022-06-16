@@ -62,62 +62,63 @@ Class Reference
     :param numbers x,y: The position of the bullet.
     :param string texture: The path to the bullet's texture.
 
-    .. method:: setSprite(texture, [speed, loop, on_finished])
+.. method:: Bullet:setSprite(texture, [speed, loop, on_finished])
+    :canonical: Bullet.setSprite
 
-        Sets the sprite of the bullet to the specified path, and changes the bullet's ``width`` and ``height`` variables to the dimensions of the sprite. ``speed``, ``loop``, and ``on_finished`` will be passed into the sprite's ``play()`` function.
+    Sets the sprite of the bullet to the specified path, and changes the bullet's ``width`` and ``height`` variables to the dimensions of the sprite. ``speed``, ``loop``, and ``on_finished`` will be passed into the sprite's ``play()`` function.
 
-        :param string texture: The path to the bullet's texture.
-        :param speed: The animation delay between frames.
-        :type speed: number, optional
-        :param loop: Whether the animation should loop.
-        :type loop: boolean, optional
-        :param on_finished: A function to call when the animation finishes.
-        :type on_finished: function, optional
+    :param string texture: The path to the bullet's texture.
+    :param speed: The animation delay between frames.
+    :type speed: number, optional
+    :param loop: Whether the animation should loop.
+    :type loop: boolean, optional
+    :param on_finished: A function to call when the animation finishes.
+    :type on_finished: function, optional
 
-    .. attribute:: wave
+.. attribute:: Bullet.wave
 
-        A reference to the current Wave class that is active. Gets defined after ``init()``, but only if spawned through :func:`Wave:spawnBullet`; otherwise, it is never defined.
+    A reference to the current Wave class that is active. Gets defined after ``init()``, but only if spawned through :func:`Wave:spawnBullet`; otherwise, it is never defined.
 
-        :type: Wave
+    :type: Wave
 
-    .. attribute:: attacker
+.. attribute:: Bullet.attacker
 
-        A reference to the enemy associated with the bullet. Gets defined after ``init()``, but only if spawned through :func:`Wave:spawnBullet`; otherwise, it is never defined.
+    A reference to the enemy associated with the bullet. Gets defined after ``init()``, but only if spawned through :func:`Wave:spawnBullet`; otherwise, it is never defined.
 
-        :type: EnemyBattler
+    :type: EnemyBattler
 
-    .. attribute:: damage
+.. attribute:: Bullet.damage
 
-        Amount of damage the bullet does. If not provided, the game will calculate damage based on the enemy's attack.
+    Amount of damage the bullet does. If not provided, the game will calculate damage based on the enemy's attack.
 
-        :type: number
+    :type: number
 
-    .. attribute:: destroy_on_hit
+.. attribute:: Bullet.destroy_on_hit
 
-        Whether the bullet will be removed when it collides with the player. ``true`` by default.
+    Whether the bullet will be removed when it collides with the player. ``true`` by default.
 
-        :type: boolean
+    :type: boolean
 
-    .. attribute:: remove_offscreen
+.. attribute:: Bullet.remove_offscreen
 
-        Whether the bullet will be removed when it goes offscreen. ``true`` by default.
+    Whether the bullet will be removed when it goes offscreen. ``true`` by default.
 
-        :type: boolean
+    :type: boolean
 
-    .. attribute:: tp
+.. attribute:: Bullet.tp
 
-        The amount of TP (in percentage) the player gains from grazing the bullet. Defaults to 1.6 (1/10th of a defend).
+    The amount of TP (in percentage) the player gains from grazing the bullet. Defaults to 1.6 (1/10th of a defend).
 
-        :type: number
+    :type: number
 
-    .. attribute:: time_bonus
+.. attribute:: Bullet.time_bonus
 
-        The number of frames, based on 30fps, that the wave's length will be reduced by when grazing the bullet. Apparently this is a mechanic in Deltarune.
+    The number of frames, based on 30fps, that the wave's length will be reduced by when grazing the bullet. Apparently this is a mechanic in Deltarune.
 
-        :type: number
+    :type: number
 
-    .. attribute:: grazed
+.. attribute:: Bullet.grazed
 
-        *(Internal)* Whether the bullet has already been grazed. (reduces graze rewards)
+    *(Internal)* Whether the bullet has already been grazed. (reduces graze rewards)
 
-        :type: boolean
+    :type: boolean
