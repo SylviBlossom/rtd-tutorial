@@ -69,13 +69,17 @@ Class Reference
         :param number speed: The animation delay between frames.
         :param boolean loop: Whether the animation should loop.
         :param function on_finished: A function to call when the animation finishes.
+    
+    ..
+        Returns whether the bullet is the bullet with the specified ID, or extends it.
+    
+        :returns: **result** (*boolean*)
 
     .. method:: isBullet(id)
 
-        Returns whether the bullet is the bullet with the specified ID, or extends it.
-
         :param string id: The id of the bullet.
-        :returns: **result** (*boolean*)
+        :returns: Whether the bullet is the bullet with the specified ID, or extends it.
+        :rtype: boolean
     
     .. method:: getTarget()
 
@@ -96,8 +100,9 @@ Class Reference
         :param string arg1: The first argument.
         :param number arg2: The second argument.
 
-        :returns: - **result** (*number*)
-                  - **result2** (*string*)
+        :returns:
+            - **result** (*number*)
+            - **result2** (*string*)
 
     .. method:: onDamage(soul)
 
