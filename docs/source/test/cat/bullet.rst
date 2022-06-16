@@ -56,52 +56,62 @@ Internal / Class Overrides
 Class Reference
 ------------------
 .. class:: Bullet(x, y, texture)
-    :param numbers x,y: The position of the bullet.
-    :param string texture: The path to the bullet's texture.
 
     Creates a new instance of the Bullet class.
 
+    :param numbers x,y: The position of the bullet.
+    :param string texture: The path to the bullet's texture.
+
     .. attribute:: wave
+
         A reference to the current Wave class that is active. Gets defined after ``init()``, but only if spawned through :func:`Wave:spawnBullet`; otherwise, it is never defined.
 
         :type: Wave
 
     .. attribute:: attacker
+
         A reference to the enemy associated with the bullet. Gets defined after ``init()``, but only if spawned through :func:`Wave:spawnBullet`; otherwise, it is never defined.
 
         :type: EnemyBattler
 
     .. attribute:: damage
+
         Amount of damage the bullet does. If not provided, the game will calculate damage based on the enemy's attack.
 
         :type: number
 
     .. attribute:: destroy_on_hit
+
         Whether the bullet will be removed when it collides with the player. ``true`` by default.
 
         :type: boolean
 
     .. attribute:: remove_offscreen
+
         Whether the bullet will be removed when it goes offscreen. ``true`` by default.
 
         :type: boolean
 
     .. attribute:: tp
+
         The amount of TP (in percentage) the player gains from grazing the bullet. Defaults to 1.6 (1/10th of a defend).
 
         :type: number
 
     .. attribute:: time_bonus
+
         The number of frames, based on 30fps, that the wave's length will be reduced by when grazing the bullet. Apparently this is a mechanic in Deltarune.
 
         :type: number
 
     .. attribute:: grazed
+
         *(Internal)* Whether the bullet has already been grazed. (reduces graze rewards)
 
         :type: boolean
 
 .. function:: Bullet:setSprite(texture, [speed, loop, on_finished])
+
     Sets the sprite of the bullet to the specified path, and changes the bullet's ``width`` and ``height`` variables to the dimensions of the sprite. ``speed``, ``loop``, and ``on_finished`` will be passed into the sprite's ``play()`` function.
 
     :param string texture: The path to the bullet's texture.
