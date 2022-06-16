@@ -18,12 +18,14 @@ Contents
 
 .. toctree::
    :caption: Main
+   :titlesonly:
 
    usage
    api
 
 .. toctree::
    :caption: Test Pages
+   :titlesonly:
 
    test/one
    test/two
