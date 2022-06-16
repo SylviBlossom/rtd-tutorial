@@ -61,7 +61,8 @@ Class Reference
     :param numbers x,y: The position of the bullet.
     :param string texture: The path to the bullet's texture.
 
-    **Functions**
+    Functions
+    ^^^^^^^^^
 
     .. method:: setSprite(texture, [speed, loop, on_finished])
 
@@ -92,21 +93,22 @@ Class Reference
 
         Called when the player collides with the bullet without invincibility frames. By default, damages the player and sets their invincibility frames.
 
-        :param :class:`Soul` soul: The :class:`Soul` that the bullet collided with.
+        :param Soul soul: The :class:`Soul` that the bullet collided with.
     
     .. method:: onCollide(soul)
 
         Called when the player collides with the bullet, regardless of invincibility frames. By default, calls :func:`Bullet:onDamage(soul) <Bullet.onDamage>` if the player does not have active invincibility frames, and removes the bullet if :attr:`destroy_on_hit` is true.
 
-        :param :class:`Soul` soul: The :class:`Soul` that the bullet collided with.
+        :param Soul soul: The :class:`Soul` that the bullet collided with.
 
     .. method:: onWaveSpawn(wave)
 
         Called when the bullet is spawned by a wave, via :func:`Wave:spawnBullet`. By default, does nothing.
 
-        :param :class:`Wave` wave: The wave that spawned the bullet.
+        :param Wave wave: The :class:`Wave` that spawned the bullet.
 
-    **Variables**
+    Variables
+    ^^^^^^^^^
 
     .. attribute:: sprite
 
