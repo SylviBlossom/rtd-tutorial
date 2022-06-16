@@ -1,6 +1,6 @@
 Bullet
 ======
-*extends :doc:`Object </index>`*
+*extends* :doc:`Object </index>`
 
 Overview
 --------
@@ -18,20 +18,23 @@ any bullet's collider, remember that it will be scaled 2x because of this.
 
 List of Functions
 -----------------
-*see :doc:`Object </index>` for base methods*
+*see* :doc:`Object </index>` *for base methods*
 
-Useful Functions:
-* :func:`Bullet:setSprite`
-* :func:`Bullet:isBullet`
+Useful Functions
+^^^^^^^^^^^^^^^^
+- :func:`Bullet:setSprite`
+- :func:`Bullet:isBullet`
 
-Overridable Functions:
-* :func:`Bullet:getTarget`
-* :func:`Bullet:getDamage`
-* :func:`Bullet:onDamage`
-* :func:`Bullet:onCollide`
-* :func:`Bullet:onWaveSpawn`
+Overridable Functions
+^^^^^^^^^^^^^^^^^^^^^
+- :func:`Bullet:getTarget`
+- :func:`Bullet:getDamage`
+- :func:`Bullet:onDamage`
+- :func:`Bullet:onCollide`
+- :func:`Bullet:onWaveSpawn`
 
-Internal / Class Overrides:
-* :func:`Bullet:init` (from ``Object:init``)
-* :func:`Bullet:update` (from ``Object:update``)
-* :func:`Bullet:draw` (from ``Object:draw``)
+Internal / Class Overrides
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+- :func:`Bullet:init` (from :func:`Object:init`)
+- :func:`Bullet:update` (from :func:`Object:update`)
+- :func:`Bullet:draw` (from :func:`Object:draw`)
