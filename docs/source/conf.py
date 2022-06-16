@@ -35,5 +35,7 @@ html_theme_options = {
     'titles_only': True,
 }
 
+highlight_language = 'lua'
+
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
